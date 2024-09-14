@@ -33,9 +33,11 @@ function initializeMap(latitude, longitude, showPopup = false) {
 async function init(ip = '', showPopup = false) {
     try {
         const data = await fetchIPDetails(ip);
+        console.log(ip);
         
         ip_address.textContent = data.ip;
-        loca.textContent = data.location.city + ", " + data.location.region + ", " + data.location.country;
+        // loca.textContent = data.location.city + ", " + data.location.region + ", " + data.location.country;
+        loca.textContent = data.location.city + ", " + data.location.country + " " + data.location.geonameId;
         timezone.textContent = data.location.timezone;
         isp.textContent = data.isp;
         
